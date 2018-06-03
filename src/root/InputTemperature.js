@@ -20,12 +20,13 @@ class InputTemperature extends Component {
     }
 
     handleTemperature(e){
-        console.log(e.target.value);
+       
         var expresion=/^\d*$/;
         if (expresion.test(e.target.value)){
             this.setState({
                 temperature: e.target.value
             })
+            this.props.temperature(e.target.value)
         }
     }
 

@@ -11,17 +11,22 @@ const styles = theme => ({
   },
 });
 
-function ButtonHeat(props) {
-  const { classes } = props;
-  return (
-    <div>
-      <Grid container >
-        <Grid item ms={12}>
-         <Button size="medium" variant="fab" className={classes.button}><i class="fas fa-thermometer-quarter"></i></Button> 
+class ButtonHeat extends Component  {
+  constructor(props){
+    super(props);
+  }
+
+render(){
+    return (
+      <div>
+        <Grid container >
+          <Grid item ms={12}>
+          <Button size="medium" variant="fab"  onClick={this.props.onClick}><i class="fas fa-thermometer-quarter"></i></Button> 
+          </Grid>
         </Grid>
-      </Grid>
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
 ButtonHeat.propTypes = {
